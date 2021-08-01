@@ -41,6 +41,7 @@ function createElem (content) { // making element
     return elem;
 }
 const crElem = createElem('item FROM JS'); // elem with content
+const crElemCopy = crElem.cloneNode(true);
 // list.append(crElem); // add element to UL in HTML (add elem to end)
 // list.prepend(crElem); // add elemnt to start
 
@@ -54,6 +55,9 @@ const crElem = createElem('item FROM JS'); // elem with content
 
 // list.replaceChild(crElem, list.children[4]); // replace element
 
-list.insertAdjacentHTML('beforeend', '<li>INSERTED VIA ADJ</li>');
-list.insertAdjacentText('beforeend', '<li>INSERTED VIA ADJ</li>');
-list.insertAdjacentElement('beforeend', crElem);
+// list.insertAdjacentHTML('beforeend', '<li>INSERTED VIA ADJ</li>');
+// list.insertAdjacentText('beforeend', '<li>INSERTED VIA ADJ</li>');
+// list.insertAdjacentElement('beforeend', crElem);
+
+list.append(crElem);
+list.prepend(crElemCopy);
